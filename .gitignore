@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.claude/settings.local.json
+*.swp
+*.swo
+*~
+
+# Temp files
+*.tmp
+*.bak
+
+# Don't commit large binary cert PDFs if they change often
+# (uncomment if you want to track them)
+# resumes/Salesforce Certifications/*.pdf
