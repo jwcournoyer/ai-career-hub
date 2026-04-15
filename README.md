@@ -22,7 +22,11 @@ career-hub/
 │   ├── MOCK_INTERVIEW_TEMPLATE.md
 │   └── DEBRIEF_TEMPLATE.md
 └── job-search/               # Opportunity tracker
-    └── SKILL.md              #   Tracking, prioritization, daily review
+    ├── SKILL.md              #   Tracking, prioritization, daily review
+    └── scraper/              #   Automated job search scraper
+        ├── jobspy_search.py  #     python-jobspy wrapper with dedup
+        ├── config.yaml       #     Search terms, filters, exclusions
+        └── requirements.txt  #     Python dependencies
 ```
 
 ## How It Works
@@ -37,6 +41,7 @@ Each folder has a `SKILL.md` that acts as a **domain API** — it teaches the AI
 - **Feedback loops** — interview debriefs inform future prep docs automatically
 - **STAR story bank** — behavioral interview stories structured as Situation/Task/Action/Result, maintained in one place, reused across interviews
 - **Three-file interview system** — prep doc (JD mapping + talking points) + mock interview (AI-simulated with interviewer personas) + debrief (post-interview coaching)
+- **Job search scraper** — automated scraping of LinkedIn and Indeed via [python-jobspy](https://github.com/Bunsly/JobSpy), with configurable search terms, company/keyword exclusions, SQLite dedup across runs, and CSV output for quick scanning
 - **Conventional commits** — `feat(journal):`, `fix(resume):`, `docs(study):`, `chore:`
 
 ### Data Flow
@@ -70,6 +75,7 @@ interview-prep/done → job-search (outcome updates)
 
 - [Claude Code](https://claude.ai/code) (CLI or VS Code extension)
 - Git + GitHub (private repo recommended)
+- **For the job scraper:** Python 3.10+ and `pip install -r job-search/scraper/requirements.txt`
 - A career worth documenting
 
 ## License

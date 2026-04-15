@@ -1,0 +1,51 @@
+# Job Search Scraper Configuration
+# Edit this file to customize your search parameters
+
+# Search terms — each gets its own search pass, results are merged and deduped
+search_terms:
+  - "IT Support"
+  - "Help Desk"
+# Job sites to scrape
+sites:
+  - linkedin
+  - indeed
+  # glassdoor and zip_recruiter are blocked (403 errors) — re-enable if they start working
+  # - glassdoor
+  # - zip_recruiter
+
+# Filters
+filters:
+  location: "United States"
+  is_remote: true
+  results_wanted: 50          # Per search term, per site
+  hours_old: 168              # 7 days
+  job_type: null              # null = all types (fulltime, contract, etc.)
+  country_indeed: "USA"
+
+# Minimum compensation — set to 0 to disable filtering
+# (LinkedIn doesn't always have salary data, so setting this too high misses postings)
+min_annual_salary: 0
+
+# Companies to EXCLUDE — already applied, ghosted, or spam
+excluded_companies:
+  # Already applied / closed / no response
+  - example already applied
+  # Recruiters / staffing firms that ghosted
+  - example recruiters
+  # Spam posters (same role in every state)
+  - example spam company
+  # Bad experience
+  - examle bad company
+  # Current / active processes (don't want duplicate applications)
+  - example
+
+# Keywords that indicate a role is NOT a fit (used to filter out false positives)
+exclude_keywords:
+  - "different specialization specialization"       # Different specialization
+  - "example known gap"       # Known gap
+
+# Output settings
+output:
+  directory: "output"
+  filename_prefix: "jobspy_results"
+  format: "csv"               # csv output for easy scanning

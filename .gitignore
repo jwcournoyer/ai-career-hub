@@ -17,3 +17,7 @@ desktop.ini
 # Don't commit large binary cert PDFs if they change often
 # (uncomment if you want to track them)
 # resumes/Salesforce Certifications/*.pdf
+
+# Job scraper — ephemeral output and history DB
+job-search/scraper/output/
+job-search/scraper/history.sqlite
