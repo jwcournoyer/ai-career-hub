@@ -16,6 +16,7 @@ This is a single private repo managing interconnected career workstreams. Each h
 ## Cross-Cutting Rules
 
 1. **Voice:** [Describe your preferred communication style — direct, formal, casual, etc.]
+   - **For anything you will speak aloud or send to a human** (interview answers, recruiter messages, drafted emails): the AI should write in your conversational cadence, not its own. Operational reference: `interview-prep/CANDIDATE_VOICE.md` — your voice fingerprint and anti-patterns, built from your real interview transcripts. Consult before drafting any spoken or recruiter-facing content; run its rubric before delivery.
 2. **Format:** Markdown everywhere. Binary files (docx, pdf, pptx) only where the deliverable requires it.
 3. **Commit messages:** Use conventional commits — `feat(journal):`, `fix(resume):`, `docs(study):`, `chore:`.
 4. **No destructive changes without confirmation.** Always confirm before deleting or overwriting existing content.
@@ -34,6 +35,7 @@ This is a single private repo managing interconnected career workstreams. Each h
 ## Canonical File Locations (No Duplicates)
 
 - `interview-prep/CANDIDATE_PROFILE.md` — Single source for candidate profile and STAR story bank. Referenced by job-search and interview-prep skills.
+- `interview-prep/CANDIDATE_VOICE.md` — Single source for spoken-content voice patterns and anti-patterns. Built from interview transcripts over time.
 - `interview-prep/INTERVIEW_PREP_TEMPLATE.md` — Single source for prep template. Copy per interview, don't modify the template.
 - `interview-prep/MOCK_INTERVIEW_TEMPLATE.md` — Single source for mock interview template.
 - `job-search/00_context_brief.md` — Single source for positioning, comp targets, and known gaps.

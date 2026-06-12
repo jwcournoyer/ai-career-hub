@@ -16,13 +16,12 @@ engineering-journal/
 ├── README.md                    ← Master index with career timeline
 ├── templates/
 │   ├── project-narrative-template.md
-│   ├── decision-discovery-template.md
-│   └── TEMPLATE-REDESIGN-RATIONALE.md
+│   └── decision-discovery-template.md
 ├── [company-name]/              ← One folder per employer (reverse chronological)
 │   └── decisions/               ← Decision/Discovery entries for that employer
 ├── independent/                 ← Independent/consulting work
 ├── personal/                    ← Non-career entries
-└── summaries/                   ← Generated summaries
+└── summaries/                   ← Generated summaries (created on first use)
 ```
 
 ## Two Templates

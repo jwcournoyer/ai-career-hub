@@ -10,8 +10,6 @@ This journal uses two templates:
 
 2. **Decision / Discovery Template** (`templates/decision-discovery-template.md`) — For focused architecture decisions, debugging sessions, design spikes, or technical discoveries. The entries that power certification scenarios and interview answers.
 
-See `templates/TEMPLATE-REDESIGN-RATIONALE.md` for the reasoning behind the template redesign.
-
 ## Directory Structure
 
 Organize entries by employer/company in reverse chronological order:
@@ -22,8 +20,7 @@ engineering-journal/
 ├── SKILL.md                          # AI instructions for this workstream
 ├── templates/
 │   ├── project-narrative-template.md
-│   ├── decision-discovery-template.md
-│   └── TEMPLATE-REDESIGN-RATIONALE.md
+│   └── decision-discovery-template.md
 ├── [current-company]/                 # Most recent employer
 │   ├── YYYY-MM_project-name.md        # Project narrative entries
 │   └── decisions/                     # Decision/discovery entries

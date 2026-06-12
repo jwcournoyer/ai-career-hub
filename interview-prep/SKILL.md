@@ -15,13 +15,12 @@ Per-interview preparation system. For each opportunity that reaches the intervie
 interview-prep/
 ├── SKILL.md
 ├── CANDIDATE_PROFILE.md          ← Permanent — the candidate's background, style, gaps, STAR story bank
+├── CANDIDATE_VOICE.md            ← Permanent — voice fingerprint, anti-patterns, self-check rubric (read before drafting ANY spoken or recruiter-facing content)
 ├── INTERVIEW_PREP_TEMPLATE.md    ← Template for new prep docs
 ├── MOCK_INTERVIEW_TEMPLATE.md    ← Template for new mock interview docs
 ├── DEBRIEF_TEMPLATE.md           ← Template for post-interview debriefs
 ├── INTERVIEW_PREP_[COMPANY].md   ← Active prep docs (move to done/ after interview)
 ├── MOCK_INTERVIEW_[COMPANY].md   ← Active mock docs (move to done/ after interview)
-├── presales/                      ← Active presales prep materials
-│   └── [per-role prep and mock files]
 └── done/                          ← Completed interviews (reference)
     ├── INTERVIEW_PREP_*.md
     ├── MOCK_INTERVIEW_*.md
@@ -32,20 +31,22 @@ interview-prep/
 
 ## Three-File System (Prep + Mock) + Debrief Loop
 
-Every interview prep produces up to three files:
+Every interview prep produces up to three files, plus two permanent reference files (profile and voice):
 
-1. **CANDIDATE_PROFILE.md** — Permanent. the candidate's full career arc, communication patterns, strengths, known gaps, interview tendencies, and **STAR story bank**. Read this first every time. The STAR story bank contains pre-structured behavioral answers following the Situation → Task → Action → Result framework — use these as the source for role-specific talking points.
+1. **CANDIDATE_PROFILE.md** — Permanent. The candidate's full career arc, communication patterns, strengths, known gaps, interview tendencies, and **STAR story bank**. Read this first every time. The STAR story bank contains pre-structured behavioral answers following the Situation → Task → Action → Result framework — use these as the source for role-specific talking points.
 
-2. **INTERVIEW_PREP_[COMPANY].md** — Per-role. Created from `INTERVIEW_PREP_TEMPLATE.md`. Contains job description, interviewer LinkedIn research, company context, and targeted talking points.
+2. **CANDIDATE_VOICE.md** — Permanent. The candidate's voice fingerprint (openers, vocabulary, sentence shapes, confident closers) extracted from real interview transcripts, paired anti-patterns with rewrites, probe-shape recognition, and a self-check rubric. **Read before drafting any spoken or recruiter-facing content** — interview answers, speaking scripts, thank-you notes, recruiter messages — and run its rubric before delivery. It starts as scaffolding; build it from transcripts as they accumulate (instructions are in the file). Until it has real content, skip the voice-check steps rather than guessing at the candidate's voice.
 
-3. **MOCK_INTERVIEW_[COMPANY].md** — Per-role. Created from `MOCK_INTERVIEW_TEMPLATE.md`. A self-contained document that can be pasted into a new AI chat session alongside `CANDIDATE_PROFILE.md` to run a realistic mock interview with interviewer personas, question banks, and coaching debrief criteria.
+3. **INTERVIEW_PREP_[COMPANY].md** — Per-role. Created from `INTERVIEW_PREP_TEMPLATE.md`. Contains job description, interviewer LinkedIn research, company context, and targeted talking points.
+
+4. **MOCK_INTERVIEW_[COMPANY].md** — Per-role. Created from `MOCK_INTERVIEW_TEMPLATE.md`. A self-contained document that can be pasted into a new AI chat session alongside `CANDIDATE_PROFILE.md` to run a realistic mock interview with interviewer personas, question banks, and coaching debrief criteria.
 
 After an interview, a **DEBRIEF_[COMPANY]_[ROUND].md** captures what worked, what hurt, recurring patterns, and coaching adjustments. Debriefs are the feedback loop — they inform future prep docs and mock interviews.
 
 ## Operations
 
 ### Creating Prep for a New Interview
-1. Read `CANDIDATE_PROFILE.md` (always — includes STAR story bank)
+1. Read `CANDIDATE_PROFILE.md` (always — includes STAR story bank); read `CANDIDATE_VOICE.md` whenever the prep includes drafted spoken answers, and run its rubric on every drafted answer
 2. Copy `INTERVIEW_PREP_TEMPLATE.md` → `INTERVIEW_PREP_[COMPANY].md`
 3. Fill in: job description, interviewer details, company context
 4. Map JD requirements to the candidate's specific experience (journal entries)
@@ -56,20 +57,21 @@ After an interview, a **DEBRIEF_[COMPANY]_[ROUND].md** captures what worked, wha
 9. If new STAR stories are needed that don't exist in the bank, add them to `CANDIDATE_PROFILE.md` (the permanent file) — not just the per-role prep doc
 
 ### Running a Mock Interview
-1. Read both `CANDIDATE_PROFILE.md` and the role-specific prep
+1. Read `CANDIDATE_PROFILE.md`, `CANDIDATE_VOICE.md` (coach against its anti-patterns), and the role-specific prep
 2. Play the interviewer realistically — match their likely style based on LinkedIn research
 3. Ask 6-8 questions mixing behavioral and technical
 4. After each answer, coach on:
    - Did the candidate lead with the conclusion or get lost in technical detail?
-   - Did he own scope or undersell with "helped with" language?
+   - Did they own scope or undersell with "helped with" language?
    - Was the answer structured (situation → action → result)?
 5. Save mock transcript and coaching notes
 
 ### Key Coaching Points (from CANDIDATE_PROFILE.md)
+- **Voice check:** All drafted spoken content must pass the `CANDIDATE_VOICE.md` self-check rubric — it should sound like the candidate, not like the AI that drafted it.
 - **STAR structure:** All behavioral answers should follow Situation → Task → Action → Result. Pre-structured stories are in the STAR story bank in `CANDIDATE_PROFILE.md`.
 - **Flip the order:** Conclusion or Result FIRST, then supporting detail. [Customize: note the candidate's default communication pattern here.]
 - **Own the scope:** Replace "I helped" with "I designed/built/led/architected"
-- **Differentiating closer:** "My strength is that I do both — architecture level AND technical build"
+- **Differentiating closer:** [Your one-liner — what makes you different. Example: "My strength is that I do both — architecture level AND technical build"]
 - **Honest about gaps:** Don't bluff on technologies the candidate hasn't used in production. Reframe as "architectural understanding, not production implementation"
 - **Zero negatives:** Never speak negatively about previous employers. Frame everything as what was delivered and learned.
 - **Demonstrate, don't confess:** When asked about weaknesses or communication style, show the skill in the answer itself — don't say "I'm working on it."
@@ -78,8 +80,9 @@ After an interview, a **DEBRIEF_[COMPANY]_[ROUND].md** captures what worked, wha
 1. Move prep files to `done/`
 2. If transcript provided, save as `done/TRANSCRIPT_[COMPANY]_[ROUND].md`
 3. Create `done/DEBRIEF_[COMPANY]_[ROUND].md` from `DEBRIEF_TEMPLATE.md` — score, analyze, identify patterns, set coaching adjustments
-4. Add any interviewer notes or follow-up docs
-5. Update `../job-search/` tracker with outcome
+4. Harvest voice patterns: if the transcript surfaced a new anti-pattern or a phrasing that landed well, add it to `CANDIDATE_VOICE.md` (verbatim quote + corrected version, or a confirmed positive pattern). Keep entries role-agnostic — round-type descriptors, not company or interviewer names.
+5. Add any interviewer notes or follow-up docs
+6. Update `../job-search/` tracker with outcome
 
 ### Thank You Note (On-Demand Only)
 When the candidate asks for a thank you note after an interview:
@@ -89,7 +92,8 @@ When the candidate asks for a thank you note after an interview:
 4. Reference 1-2 specific things discussed in the interview (shows the candidate was listening, not sending a template)
 5. Reinforce fit for the role without re-pitching the entire resume
 6. Keep it short — 4-6 sentences max. No one reads long thank you emails.
-7. **Do NOT create this proactively.** Only generate when the candidate explicitly asks.
+7. Run the draft against `CANDIDATE_VOICE.md` — it's recruiter-facing content.
+8. **Do NOT create this proactively.** Only generate when the candidate explicitly asks.
 
 ### Creating Prep for a New Interview (When Prior Debriefs Exist)
 Before writing prep, read the most recent 2-3 debriefs in `done/DEBRIEF_*.md`. Look for:

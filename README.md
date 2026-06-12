@@ -18,6 +18,7 @@ career-hub/
 │   └── SKILL.md              #   Resume management rules
 ├── interview-prep/           # Per-interview prep, mock interviews, STAR stories
 │   ├── SKILL.md              #   Three-file system (prep + mock + debrief)
+│   ├── CANDIDATE_VOICE.md    #   Your voice fingerprint + anti-patterns (built from transcripts)
 │   ├── INTERVIEW_PREP_TEMPLATE.md
 │   ├── MOCK_INTERVIEW_TEMPLATE.md
 │   └── DEBRIEF_TEMPLATE.md
@@ -39,6 +40,7 @@ Each folder has a `SKILL.md` that acts as a **domain API** — it teaches the AI
 - **Cross-referencing over duplication** — canonical files exist in one location only
 - **Append-only status tracking** — opportunity files preserve full history, never overwrite
 - **Feedback loops** — interview debriefs inform future prep docs automatically
+- **Voice profile** — a fingerprint of how YOU actually talk, built from your real interview transcripts, so AI-drafted answers and recruiter messages sound like you instead of like an LLM — with a self-check rubric run before anything is delivered
 - **STAR story bank** — behavioral interview stories structured as Situation/Task/Action/Result, maintained in one place, reused across interviews
 - **Three-file interview system** — prep doc (JD mapping + talking points) + mock interview (AI-simulated with interviewer personas) + debrief (post-interview coaching)
 - **Job search scraper** — automated scraping of LinkedIn and Indeed via [python-jobspy](https://github.com/Bunsly/JobSpy), with configurable search terms, company/keyword exclusions, SQLite dedup across runs, and CSV output for quick scanning
@@ -60,7 +62,8 @@ interview-prep/done → job-search (outcome updates)
 3. Create your `interview-prep/CANDIDATE_PROFILE.md` with your career arc and STAR stories
 4. Create your `job-search/00_context_brief.md` with your positioning and comp targets
 5. Start adding engineering journal entries using the templates
-6. When an opportunity comes in, tell Claude Code — it handles the rest
+6. As interview transcripts accumulate, build out `interview-prep/CANDIDATE_VOICE.md` — your voice fingerprint and anti-patterns (instructions are in the file)
+7. When an opportunity comes in, tell Claude Code — it handles the rest
 
 ## Example Commands in Claude Code
 

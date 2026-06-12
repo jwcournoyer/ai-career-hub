@@ -35,6 +35,8 @@ resumes/
 | `*_OnePager_[year].docx` | Quick summary for recruiter screens |
 | `*_[Variant].docx` | Role-specific emphasis variants |
 
+Export a PDF alongside the docx for any variant actually submitted — and regenerate the PDF whenever the docx changes, so the two never drift.
+
 ## Operations
 
 ### Tailoring for a Specific Role

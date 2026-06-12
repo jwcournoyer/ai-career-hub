@@ -1,6 +1,6 @@
 ---
 name: job-search
-description: "Manage the candidate's active job search — update the opportunity tracker, add new leads, research companies, draft outreach messages, track recruiter communications, and analyze role fit. Use this skill whenever the candidate mentions a new job opportunity, asks to update the tracker, wants to research a company, needs to draft a recruiter response, asks about his pipeline status, or wants to compare opportunities. Also trigger when he mentions recruiter names, company names from his search, rate negotiations, or prioritization of opportunities."
+description: "Manage the candidate's active job search — update the opportunity tracker, add new leads, research companies, draft outreach messages, track recruiter communications, and analyze role fit. Use this skill whenever the candidate mentions a new job opportunity, asks to update the tracker, wants to research a company, needs to draft a recruiter response, asks about pipeline status, or wants to compare opportunities. Also trigger when they mention recruiter names, company names from their search, rate negotiations, or prioritization of opportunities."
 ---
 
 # Job Search
@@ -14,12 +14,15 @@ Track and manage all job opportunities from first contact through offer/close. E
 ```
 job-search/
 ├── SKILL.md
-├── 00_context_brief.md       ← Who the candidate is, positioning, comp targets, gaps
+├── 00_context_brief.md            ← Who the candidate is, positioning, comp targets, gaps
 ├── 00_master_tracker.md           ← Pipeline view: active, pending, closed
-├── 01_example_job1.md             ← Per-opportunity files
-├── 02_example_job2.md
-├── ...
-└── 30_example_job30.md
+├── NN_company_name.md             ← Per-opportunity files, numbered sequentially
+└── scraper/                        ← python-jobspy automated search tool
+    ├── jobspy_search.py            ← Main script — scrapes LinkedIn + Indeed
+    ├── config.yaml                 ← Search terms, excluded companies, filters
+    ├── requirements.txt            ← Dependencies (python-jobspy, pyyaml)
+    ├── history.sqlite              ← Dedup DB (gitignored) — tracks seen postings
+    └── output/                     ← CSV results (gitignored) — ephemeral
 ```
 
 ## File Conventions
@@ -32,7 +35,7 @@ job-search/
 ## Key Files
 
 ### 00_context_brief.md
-Comprehensive positioning doc: identity, career arc summary, technical strengths, known gaps, communication style, comp targets, what he's looking for. Also contains **manager references** for recruiter requests. **Read this before doing anything in the job search space.**
+Comprehensive positioning doc: identity, career arc summary, technical strengths, known gaps, communication style, comp targets, what the candidate is looking for. Also contains **manager references** for recruiter requests. **Read this before doing anything in the job search space.**
 
 ### 00_master_tracker.md
 Pipeline summary with sections: Active/In Progress, Pending, Closed. Each entry has type, rate/salary, location, status, priority rating, and file reference.
@@ -62,8 +65,8 @@ When a recruiter requests references, pull manager references from `00_context_b
 Read active entries and assess against:
 - Comp vs. target ([YOUR TARGET COMP RANGE])
 - Architecture ownership vs. ticket execution
-- Remote preference (South FL hybrid acceptable)
-- Strategic value (AI intersection, federal clearance, resume trajectory)
+- Location fit ([YOUR REMOTE/HYBRID/ONSITE PREFERENCE])
+- Strategic value (career trajectory, strategic skills, clearances)
 - Domain overlap with existing experience
 
 ## Priority Framework
@@ -80,7 +83,7 @@ When the candidate asks "what do I need to do today/tomorrow?", scan the **Actio
 
 ## Job Search Scraper
 
-Automated job search tool in `scraper/` that scrapes LinkedIn and Indeed for Salesforce architect roles, filters out excluded companies and irrelevant keywords, deduplicates against a SQLite history database, and outputs a CSV for manual review.
+Automated job search tool in `scraper/` that scrapes LinkedIn and Indeed for roles matching your configured search terms, filters out excluded companies and irrelevant keywords, deduplicates against a SQLite history database, and outputs a CSV for manual review.
 
 ### Usage
 ```bash
